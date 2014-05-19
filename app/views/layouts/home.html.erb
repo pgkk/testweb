@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" class="app js no-touch no-android chrome no-firefox no-iemobile no-ie no-ie8 no-ie10 no-ie11 no-ios">
+<head>
+
+  <title>App</title>
+  <meta charset="utf-8" />
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <!--[if lt IE 9]>
+    <script src="<%= asset_path 'ie/html5shiv.js'%>"></script>
+    <script src="<%= asset_path 'ie/respond.min.js' %>"></script>
+    <script src="<%= asset_path 'ie/excanvas.js' %>"></script>
+  <![endif]-->
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<section class="vbox">
+		<%= render "layouts/header"%>
+		<section>
+			<section class="hbox stretch">
+			<%= render "layouts/left" %>
+        <section id="content">
+          <section class="vbox">
+            <%= yield %>
+            <%= render "layouts/content_footer" %>
+          </section>
+          <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen" data-target="#nav"></a>
+        </section>
+			</section>
+		</section>
+	</section>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+</body>
+</html>
