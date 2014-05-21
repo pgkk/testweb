@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @sys_user.name %>
+</p>
+
+<p>
+  <strong>Pwd:</strong>
+  <%= @sys_user.pwd %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= @sys_user.photo %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @sys_user.phone %>
+</p>
+
+<p>
+  <strong>Sex:</strong>
+  <%= @sys_user.sex %>
+</p>
+
+<%= link_to 'Edit', edit_sys_user_path(@sys_user) %> |
+<%= link_to 'Back', sys_users_path %>

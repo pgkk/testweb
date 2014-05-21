@@ -21,3 +21,12 @@
 
 en:
   hello: "Hello world"
+
+  will_paginate:
+    line_item:
+      page_entries_info:
+        single_page:
+          zero:  "没有记录"
+          one:   "显示1条记录"
+          other: "共 %{count} 条记录"
+        multi_page: "显示 %{from} - %{to} 条记录, 总共 %{count} 条记录"

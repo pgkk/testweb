@@ -20,7 +20,9 @@
 			<%= render "layouts/left" %>
         <section id="content">
           <section class="vbox">
+            <section class="scrollable padder">
             <%= yield %>
+            </section>
             <%= render "layouts/content_footer" %>
           </section>
           <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen" data-target="#nav"></a>
