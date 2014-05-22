@@ -53,7 +53,7 @@
         <label class="col-sm-3 control-label">性 别：</label>
         <div class="col-sm-9">
         <%= f.collection_radio_buttons :sex, [["0", '男'] ,["1", '女']], :first, :last do |b| %>
-          <span class="i-checks" style="margin-left:10px;">
+          <span class="i-checks" style="margin-left:10px;float:left;">
             <%=  b.label { b.radio_button + raw('<i></i>') + b.text } %>  
           </span>
         <% end %>
