@@ -5,6 +5,7 @@
   <title>App</title>
   <meta charset="utf-8" />
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <!--[if lt IE 9]>
     <script src="<%= asset_path 'ie/html5shiv.js'%>"></script>
     <script src="<%= asset_path 'ie/respond.min.js' %>"></script>
@@ -30,6 +31,6 @@
 			</section>
 		</section>
 	</section>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+ 
 </body>
 </html>

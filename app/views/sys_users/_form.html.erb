@@ -1,5 +1,4 @@
-<%= form_for(@sys_user,html: {class: "form-horizontal"},data: {validate: "parsley"}) do |f| %>
-  
+<%= form_for(@sys_user,html: {id: "sys_user_form",class: "form-horizontal"},data: {validate: "parsley"}) do |f| %>
 
 <% if @sys_user.errors.any? %>
     <div class="alert alert-danger">
@@ -25,14 +24,16 @@
       <div class="form-group">
         <label class="col-sm-3 control-label">用户名：</label>
         <div class="col-sm-9">
-          <%= f.text_field :name, :required=>"required", :class => "input-sm input-s form-control parsley-validated", "data-required" => "true", "placeholder" => "用户名" %> 
+          <%= f.text_field :name, :required=>"required", :class => "input-sm input-s form-control parsley-validated", 
+          "placeholder" => "用户名" , "data-parsley-length" => "[3,20]" %> 
         </div>
       </div>
 
       <div class="form-group">
         <label for="" class="col-sm-3 control-label">密码:</label>
         <div class="col-sm-9">
-           <%= f.password_field :pwd,:placeholder=>"密 码",:class=>"input-sm input-s form-control parsley-validated",:required=>"required",:minlength=>8,:maxlength=>20 %>
+           <%= f.password_field :pwd,:placeholder=>"密 码",:class=>"input-sm input-s form-control parsley-validated",
+           :required => "required", "data-parsley-minlength" => "6" %>
         </div>
       </div>
 
@@ -40,7 +41,11 @@
     <div class="form-group">
       <label for="" class="col-sm-3 control-label">确认密码:</label>
       <div class="col-sm-9">
-         <%= f.password_field :pwd_confirmation,:placeholder=>"确认密码",:class=>"input-sm input-s form-control parsley-validated",:required=>"required",:equalTo=>'#player_password',:minlength=>8,:maxlength=>20 %>
+         <%= f.password_field :pwd_confirmation, :placeholder=>"确认密码",
+              :class => "input-sm input-s form-control parsley-validated",
+              :required => "required",
+              "data-parsley-equalto" => "#sys_user_pwd", 
+              "data-parsley-minlength" => "6" %>
       </div>
     </div>
 
@@ -58,14 +63,14 @@
       <div class="form-group">
         <label class="col-sm-3 control-label">联系方式：</label>
         <div class="col-sm-9">
-          <%= f.text_field :phone, :class => "input-sm input-s form-control parsley-validated", "data-required" => "true", "placeholder" => "手机号码或者座机号码" %> 
+          <%= f.text_field :phone, :class => "input-sm input-s form-control parsley-validated", "placeholder" => "手机号码或者座机号码"%> 
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-sm-3 control-label">照片：</label>
         <div class="col-sm-9">
-          <%= f.text_field :photo, :class => "input-sm input-s form-control parsley-validated","data-required" => "true", "placeholder" => "请选择" %> 
+          <%= f.text_field :photo, :class => "input-sm input-s form-control parsley-validated", "placeholder" => "...." %> 
         </div>
       </div>
       <br/>
@@ -82,3 +87,6 @@
   </section>
 
 <% end %>
+<script type="text/javascript">
+    $('#sys_user_form').parsley();  
+</script>

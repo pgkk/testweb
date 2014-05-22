@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require app
+//= require parsley
 //= require slimscroll/jquery.slimscroll.min
 //= require app.plugin
 //= require_tree .
