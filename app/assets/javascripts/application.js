@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require app
 //= require parsley
+//= require parsley.i18n.zh_cn
 //= require slimscroll/jquery.slimscroll.min
 //= require app.plugin
 //= require_tree .

@@ -1,0 +1,21 @@
+en:
+  simple_form:
+    "yes": 'Yes'
+    "no": 'No'
+    required:
+      text: 'required'
+      mark: '*'
+      html: '<abbr title="必需" style="color:#f00;">*</abbr>'
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      # html: '<abbr title="required">*</abbr>'
+    # Labels and hints examples
+    labels:
+      sys_user:
+        name: '用户名：'
+        pwd: '密 码：'
+        pwd_confirmation: '确认密码：'
+        sex: '性别：'
+        phone: '手机号码：'
+        photo: '照片：'
+
