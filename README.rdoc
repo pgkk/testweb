@@ -1,5 +1,24 @@
 == README
+需要先加一条测试记录作为登录：
+name: admin
 
+sex : 0
+
+pwd:(界面输入的真实密码是123456)
+53ad28e7dfca16a87082e890567376f872cc55c7ec406d6268160c2abbfd4ca4
+
+hashcode:
+yq9vvw1dyu613xle4c1fp1gy12jwq
+
+或者使用rails console添加，例如：
+2.0.0-p451 :001 > SysUser.create(:name=>'testuser',:password=>'123456',:sex=>0,:email=>'admin@163.com')
+   (0.2ms)  BEGIN
+  SysUser Exists (0.3ms)  SELECT  1 AS one FROM `sys_users`  WHERE `sys_users`.`name` = BINARY 'testuser' LIMIT 1
+  SQL (0.3ms)  INSERT INTO `sys_users` (`created_at`, `email`, `hashcode`, `name`, `pwd`, `updated_at`) VALUES ('2014-05-26 18:53:46', 'admin@163.com', '18tp5y5yawurbpx13vwl7k812d', 'testuser', 'f3059f20940571e26f2dc6a7ad070a0243a9821960a88dd9ac724459d4e45a8d', '2014-05-26 18:53:46')
+   (0.4ms)  COMMIT
+ => #<SysUser id: 3, name: "testuser", pwd: "f3059f20940571e26f2dc6a7ad070a0243a9821960a88dd9ac...", photo: nil, phone: nil, sex: 0, created_at: "2014-05-26 18:53:46", updated_at: "2014-05-26 18:53:46", email: "admin@163.com", hashcode: "18tp5y5yawurbpx13vwl7k812d"> 
+
+---------------------------------------------
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
