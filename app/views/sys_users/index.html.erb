@@ -25,13 +25,8 @@
         <table class="table table-striped b-t b-light">
           <thead>
             <tr>
-              <th class="th-sortable" data-toggle="class">用户名
-                <span class="th-sort">
-                  <i class="fa fa-sort-down text"></i>
-                  <i class="fa fa-sort-up text-active"></i>
-                  <i class="fa fa-sort"></i>
-                </span>
-              </th>
+              <th width="120">用户名</th>
+              <th>Email</th>
               <th width="200">性别</th>
               <th width="200">联系电话</th>
               <th width="120">操作</th> 
@@ -41,6 +36,7 @@
             <% @sys_users.each do |sys_user| %>
               <tr>
                 <td><%= sys_user.name %></td>
+                <td><%= sys_user.email %></td>
                 <td><%= sys_user.sex == 1 ? '女' : '男' %></td>
                 <td><%= sys_user.phone_str %></td>
                 <td>

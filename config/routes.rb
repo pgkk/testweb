@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
 
+
   resources :sys_users
 
   root 'home#index'
+
+  get 'home', :to => 'home#index', :as => 'home'
+  get 'sessions/login', :to => 'sessions#login', :as => 'login'
+  post 'sessions/login_validate', :to => 'sessions#validate', :as => 'login_validate'
+  get 'sessions/logout', :to => 'sessions#logout', :as => 'logout'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

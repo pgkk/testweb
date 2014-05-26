@@ -57,7 +57,7 @@ class SysUsersController < ApplicationController
     end
 
     def sys_user_params
-      params.require(:sys_user).permit(:name, :pwd, :photo, :phone, :sex)
+      params.require(:sys_user).permit(:name, :password, :photo, :phone, :sex, :email)
     end
 
 end

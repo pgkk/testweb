@@ -27,7 +27,7 @@
         <div class="col-sm-9">
           <%= f.input :name, :required => true, 
             :class => "input-sm input-s form-control parsley-validated", 
-            :placeholder => "用户名" , :input_html => {"data-parsley-length" => "[3,20]"} %> 
+            :input_html => {"data-parsley-length" => "[3,20]"} %> 
         </div>
       </div>
 
@@ -36,7 +36,7 @@
       <% if params[:action]=='new'%>
         <div class="form-group">
           <div class="col-sm-9">
-            <%= f.input :pwd, :as => :password, :placeholder => "密 码", 
+            <%= f.input :password, :as => :password, 
               :class => "input-sm input-s form-control parsley-validated",
               :required => true, :input_html => {"data-parsley-minlength" => "6"} %>
           </div>
@@ -44,13 +44,21 @@
 
         <div class="form-group">
           <div class="col-sm-9">
-             <%= f.input :pwd_confirmation, :as => :password,:placeholder=>"确认密码",
+             <%= f.input :password_confirmation, :as => :password,
                   :class => "input-sm input-s form-control parsley-validated",
                   :required => true,
-                  :input_html => {"data-parsley-equalto" => "#sys_user_pwd","data-parsley-minlength" => "6"} %>
+                  :input_html => {"data-parsley-equalto" => "#sys_user_password",
+                    "data-parsley-minlength" => "6"} %>
           </div>
         </div>
       <% end %>
+
+      <div class="form-group">
+        <div class="col-sm-9">
+          <%= f.input :email, :class => "input-sm input-s form-control parsley-validated",
+              :input_html => {'data-parsley-type' => 'email'}%> 
+        </div>
+      </div>
 
       <div class="form-group">
         <div class="col-sm-9">
@@ -61,15 +69,13 @@
 
       <div class="form-group">
         <div class="col-sm-9">
-          <%= f.input :phone, :class => "input-sm input-s form-control parsley-validated", 
-              "placeholder" => "手机号码或者座机号码"%> 
+          <%= f.input :phone, :class => "input-sm input-s form-control parsley-validated"%> 
         </div>
       </div>
 
       <div class="form-group">
         <div class="col-sm-9">
-          <%= f.input :photo, :class => "input-sm input-s form-control parsley-validated", 
-              "placeholder" => "图片" %> 
+          <%= f.input :photo, :class => "input-sm input-s form-control parsley-validated"%> 
         </div>
       </div>
       <br/>

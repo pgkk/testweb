@@ -11,10 +11,10 @@
               </span>
               <span class="hidden-nav-xs clear">
                 <span class="block m-t-xs">
-                  <strong class="font-bold text-lt">Kang.Zhang</strong> 
+                  <strong class="font-bold text-lt"><%=session[:user_name]%></strong> 
                   <b class="caret"></b>
                 </span>
-                <span class="text-muted text-xs block">cqzhangkang@163.com</span>
+                <span class="text-muted text-xs block"><%=session[:user_email]%></span>
               </span>
             </a>
             <ul class="dropdown-menu animated fadeInRight m-t-xs">                      
@@ -36,7 +36,8 @@
               </li>
               <li class="divider"></li>
               <li>
-                <a href="#" data-toggle="ajaxModal" >退出</a>
+              <!-- data-toggle="ajaxModal" -->
+                <a href="<%=logout_path%>" >退出</a>
               </li>
             </ul>
           </div>

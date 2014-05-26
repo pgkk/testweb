@@ -11,4 +11,30 @@ class SysUser < ActiveRecord::Base
     return str
   end
 
+  def password
+    @password
+  end
+
+  def password=(pass)
+    return unless pass
+    @password = pass
+    gennerate_password(pass)      
+  end
+
+  #登录验证
+  def self.authenticate(name,password)
+    user = SysUser.find_by(:name => name)
+    if user && Digest::SHA256.hexdigest(password + user.hashcode) == user.pwd
+      return user
+    else
+      return nil
+    end
+  end
+
+  private
+  #密码生成
+  def gennerate_password(pass)
+    salt = Array.new(12){rand(2048).to_s(36)}.join
+    self.hashcode, self.pwd = salt, Digest::SHA256.hexdigest(pass + salt)
+  end
 end

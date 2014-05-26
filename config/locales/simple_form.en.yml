@@ -13,9 +13,20 @@ en:
     labels:
       sys_user:
         name: '用户名：'
-        pwd: '密 码：'
-        pwd_confirmation: '确认密码：'
+        password: '密 码：'
+        password_confirmation: '确认密码：'
+        email: 'Email：'
         sex: '性别：'
         phone: '手机号码：'
         photo: '照片：'
+
+    placeholders:
+        sys_user:
+          name: '用户名'
+          password: '密 码'
+          password_confirmation: '确认密码'
+          email: 'Email 地址'
+          sex: '性别'
+          phone: '手机号码'
+          photo: '照片'
 
