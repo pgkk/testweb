@@ -1,7 +1,7 @@
-en:
+zh:
   simple_form:
-    "yes": 'Yes'
-    "no": 'No'
+    "yes": '是'
+    "no": '否'
     required:
       text: 'required'
       mark: '*'
@@ -19,7 +19,9 @@ en:
         sex: '性别：'
         phone: '手机号码：'
         photo: '照片：'
-
+      sys_role:
+        roleName: '角色名称：'
+        remark: '备注：'
     placeholders:
         sys_user:
           name: '用户名'
@@ -29,4 +31,7 @@ en:
           sex: '性别'
           phone: '手机号码'
           photo: '照片'
+        sys_role:
+          roleName: '角色名称'
+          remark: '备注'
 

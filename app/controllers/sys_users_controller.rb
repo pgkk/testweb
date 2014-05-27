@@ -6,7 +6,8 @@ class SysUsersController < ApplicationController
   def index
     #@sys_users = SysUser.search(params[:search]).paginate(:page => params[:page], :per_page => 5)
     if params[:search] != ''
-      @sys_users = SysUser.where("name LIKE '%#{params[:search]}%'").paginate(:page => params[:page] || 1, :per_page => 5)
+      @sys_users = SysUser.where("name LIKE '%#{params[:search]}%'")
+        .paginate(:page => params[:page] || 1, :per_page => 5)
     else
       @sys_users = SysUser.paginate(:page => params[:page] || 1, :per_page => 5)
     end

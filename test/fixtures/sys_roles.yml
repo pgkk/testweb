@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  roleName: MyString
+  remark: MyString
+
+two:
+  roleName: MyString
+  remark: MyString

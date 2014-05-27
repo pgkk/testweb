@@ -1,13 +1,18 @@
 Rails.application.routes.draw do
 
 
-  resources :sys_users
-
   root 'home#index'
 
+  resources :sys_users
+  resources :sys_roles
+
+  #首页
   get 'home', :to => 'home#index', :as => 'home'
+  #登录
   get 'sessions/login', :to => 'sessions#login', :as => 'login'
+  #登录验证
   post 'sessions/login_validate', :to => 'sessions#validate', :as => 'login_validate'
+  #登出
   get 'sessions/logout', :to => 'sessions#logout', :as => 'logout'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
