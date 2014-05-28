@@ -1,7 +1,11 @@
 class SysUser < ActiveRecord::Base
+
+  has_many :sys_user_roles
+  has_many :sys_roles, :through => :sys_user_roles
+
   validates_uniqueness_of :name, {:allow_nil => true, :message => '用户名已存在！'}
   validates_length_of :pwd, {:allow_nil => true, :minimum => 6, :message => '密码最小长度为6位'}
-  validates_presence_of :sex, :message=> "性别不能为空"
+  validates_presence_of :sex, :message => '性别不能为空'
 
   #联系方式屏蔽部分字符
   def phone_str
@@ -19,6 +23,16 @@ class SysUser < ActiveRecord::Base
     return unless pass
     @password = pass
     gennerate_password(pass)      
+  end
+
+  #角色名称条
+  def role_desc
+    return "" unless self.sys_roles
+    roleNames = []
+    self.sys_roles.each do |role|
+      roleNames.push role.roleName
+    end
+    return roleNames.join(',')
   end
 
   #登录验证

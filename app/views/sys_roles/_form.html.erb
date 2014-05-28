@@ -3,17 +3,33 @@
   data: {validate: "parsley"}) do |f| %>
 
   <section class="panel panel-default">
+
+    <% if @sys_role.errors.any? %>
+      <div class="alert alert-danger">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <i class="fa fa-ban-circle"></i>
+        <strong>
+        有<%= @sys_role.errors.count %>条错误消息：
+        </strong>
+        <ul>
+        <% @sys_role.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
     <header class="panel-heading">
       <strong>角色信息</strong>
     </header>
-    <div class="panel-body">   
 
+    <div class="panel-body">
       <div class="form-group">
         <%=f.label :roleName, :required => true, :class => "col-sm-3 control-label"%>
         <div class="col-sm-9">
           <%= f.text_field :roleName,
             :class => "input-sm input-s form-control parsley-validated", 
-            :input_html => {"data-parsley-length" => "[1,50]"} %> 
+            "data-parsley-length" => "[1,50]" %> 
         </div>
       </div>
 
@@ -22,7 +38,7 @@
         <div class="col-sm-9">
           <%= f.text_area :remark, :class => "form-control parsley-validated",
             :style => "width:300px;height:120px;",
-            :input_html => {"data-parsley-length" => "[0,255]"}%>
+            "data-parsley-length" => "[0,255]"%>
         </div>
       </div>
 

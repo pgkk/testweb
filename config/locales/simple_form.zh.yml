@@ -19,6 +19,7 @@ zh:
         sex: '性别：'
         phone: '手机号码：'
         photo: '照片：'
+        sys_roles: '角色：'
       sys_role:
         roleName: '角色名称：'
         remark: '备注：'
